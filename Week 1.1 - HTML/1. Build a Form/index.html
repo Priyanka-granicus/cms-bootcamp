@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Build a Form</title>
 </head>
+
 <body>
-	
+
 	<!-- Add your code here -->
+	<form action="/login/" method="POST" aria-label="Login Form">
+		<div>
+			<label for="formEmail">Email <span aria-hidden="true">*</span></label>
+			<input type="email" name="email" id="formEmail" aria-describedby="emailErrorNote" aria-required="true" required>
+			<p id="emailErrorNote">Enter a valid email address</p>
+		</div>
+
+		<div>
+			<label for="formPass">Password <span aria-hidden="true">*</span></label>
+			<input type="password" name="password" id="formPass" required>
+		</div>
+		<div>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
 
 </body>
 </html>

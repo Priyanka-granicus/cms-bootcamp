@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +15,32 @@
 		}
 	</style>
 </head>
+
 <body>
-	
+
 	<style>
 		/* Modify the CSS below to add the desired hover effect and animation */
 		.box {
 			width: 100px;
 			height: 100px;
 			background-color: rebeccapurple;
+			margin: 100px auto;
+			/* transition: transform 200ms ease-in; */
+			transform-origin: center center;
+		}
+
+		.box:hover {
+			transform: scale(2);
+			transition-duration: 200ms;
+		}
+
+		.box:not(:hover) {
+			transition-duration: 160ms;
 		}
 	</style>
 
 	<div class="box"></div>
 
 </body>
+
 </html>

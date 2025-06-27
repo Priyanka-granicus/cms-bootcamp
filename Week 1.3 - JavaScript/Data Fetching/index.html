@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Data Fetching</title>
 </head>
+
 <body>
-	
+
 	<ul class="movies"></ul>
-	
+
 	<script>
 		// Add your code here
+		document.addEventListener('DOMContentLoaded', () => {
+			const BASE_URL = "https://ghibliapi.vercel.app"
+			const SEARCH_QUERY = "/films";
+			const FILMS_URL = `${BASE_URL}${SEARCH_QUERY}`;
+			const movieList = document.querySelector('.movies');
+
+			fetch(FILMS_URL)
+				.then(response => response.json())
+
+				.then(films => {
+					films.forEach(film => {
+						const li = document.createElement('li');
+						li.textContent = film.title;
+						movieList.appendChild(li);
+					});
+				})
+
+				.catch(error => {
+					console.error('Error fetching films:', error);
+				})
+		})
 	</script>
 
 </body>
+
 </html>
